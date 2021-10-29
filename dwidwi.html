@@ -1,0 +1,27 @@
+    "color": (
+      property: color,
+      class: text,
+      local-vars: (
+        "text-opacity": 1
+      ),
+      values: map-merge(
+        $utilities-text-colors,
+        (
+          "muted": $text-muted,
+          "black-50": rgba($black, .5), // deprecated
+          "white-50": rgba($white, .5), // deprecated
+          "reset": inherit,
+        )
+      )
+    ),
+    "text-opacity": (
+      css-var: true,
+      class: text-opacity,
+      values: (
+        25: .25,
+        50: .5,
+        75: .75,
+        100: 1
+      )
+    ),
+    
