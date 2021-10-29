@@ -1,0 +1,37 @@
+<?php 
+	include 'koneksi.php'
+	if (isset($_SESSION['user'])) {
+		echo "<script>window.location'login.php</script>"
+	}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TITLE</title>
+</head>
+<body>
+	<div class="kiri">
+		<ul>
+			<a href="index.php?hal=index.php"><li>Index</li></a>
+			<a href="index.php?hal=data.php"><li>Data</li></a>
+			<a href="index.php?hal=laporan.php"><li>Laporan</li></a>
+			<a href="logout.spp"><li>Logout</li></a>
+		</ul>
+	</div>
+	<div class="kanan">
+		<?php
+			if (isset($_Get['hal'])){
+				if ($_Get['hal'] == 'pembayaran')
+					include 'pembayaran.php';
+				else if ($_Get['hal'] == 'data-pembayaran')
+					include 'data-pembayaran.php';
+				else if ($_Get['hal'] == 'laporan-pembayaran')
+					include 'laporan-pembayaran.php';
+			} else {
+				include 'depan.php'
+			}
+		?>
+	</div>
+
+</body>
+</html>
